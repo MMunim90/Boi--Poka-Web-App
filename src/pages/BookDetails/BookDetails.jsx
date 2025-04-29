@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router";
 import { addToStoredDB, addToStoredWishDB } from "../../utility/addToDB";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import { Helmet } from "react-helmet";
 
 const MySwal = withReactContent(Swal)
 
@@ -55,7 +56,10 @@ const BookDetails = () => {
 
   return (
     <div className="w-2/3 mx-auto flex gap-20">
-      <img className="w-[425px] p-20 bg-gray-400 rounded-2xl" src={image} alt="" />
+      <Helmet>
+        <title>Boi Poka | {bookName}</title>
+      </Helmet>
+      <img className="w-[425px] p-12 bg-gray-400 rounded-2xl object-cover" src={image} alt="" />
       <div className="space-y-2">
         <h1 className="font-bold text-5xl mb-6">{bookName}</h1>
         <p className="text-[20px] opacity-50">By : {author}</p>

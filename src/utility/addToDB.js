@@ -1,3 +1,4 @@
+import toast, { Toaster } from 'react-hot-toast';
 
 const getStoredBook = () => {
     const storedBookSTR = localStorage.getItem("readList");
@@ -17,7 +18,7 @@ const addToStoredDB = (id) => {
     const storedBookData = getStoredBook()
 
     if(storedBookData.includes(id)){
-        alert('This book is already marked!');
+        toast.error('This book is already marked!');
     }
     else{
         storedBookData.push(id)
@@ -49,7 +50,7 @@ const addToStoredWishDB = (id) => {
     const storedBookData = getStoredWishBook()
 
     if(storedBookData.includes(id)){
-        alert('This book is in Wish List!');
+        toast.error('This book is in Wish List!');
     }
     else{
         storedBookData.push(id)

@@ -10,9 +10,9 @@ const Book = ({ book }) => {
     book || {};
   return (
     <Link to={`/bookDetails/${bookId}`}>
-      <div className="card bg-base-100 w-96 shadow-sm mx-auto border border-gray-600 py-4 shadow">
+      <div className="card bg-base-100 w-96 shadow-sm mx-auto border border-gray-600 py-4 lg:shadow-2xl">
         <figure className="p-4 bg-gray-300 w-11/12 mx-auto rounded-2xl">
-          <img className="h-[166px]" src={image} alt="Shoes" />
+          <img className="h-[166px] object-cover" src={image} alt="Shoes" />
         </figure>
         <div className="card-body">
           <div className="flex justify-start gap-3">

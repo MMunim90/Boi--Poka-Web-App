@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { getStoredBook, getStoredWishBook } from "../../utility/addToDB";
 import Book from "../Book/Book";
+import { Helmet } from "react-helmet";
 
 const ListedBook = () => {
   const [readList, setReadList] = useState([]);
@@ -60,8 +61,12 @@ const ListedBook = () => {
         setWishList(sortedByYear);
     }
   }
+
   return (
     <div>
+      <Helmet>
+        <title>Boi Poka | Listed Books</title>
+      </Helmet>
       <div className="place-self-center">
       <div className="dropdown dropdown-bottom dropdown-center">
         <div tabIndex={0} role="button" className="btn m-1">
